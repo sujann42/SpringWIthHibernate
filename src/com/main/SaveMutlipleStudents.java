@@ -17,9 +17,13 @@ public class SaveMutlipleStudents {
 
 		try {
 			// Create 3 more students object
+
 			Student s1 = new Student("John", "Terry", "terry@gmail.com");
 			Student s2 = new Student("Eden", "Hazard", "eden@gmail.com");
 			Student s3 = new Student("Didier", "Drogba", "didier@gmail.com");
+			Student s4 = new Student("Frank", "Lampard", "frank@ymail.com");
+			Student s5 = new Student("Nathan", "Chalobah", "fa@boss.com");
+			Student s6 = new Student("Mikel", "Obi", "bio@mills.com");
 			// Start a transaction
 			session.beginTransaction();
 			// Save the student object
@@ -27,6 +31,9 @@ public class SaveMutlipleStudents {
 			session.save(s1);
 			session.save(s2);
 			session.save(s3);
+			session.save(s4);
+			session.save(s5);
+			session.save(s6);
 			// Commit Transaction
 			session.getTransaction().commit();
 			System.out.println("Done!");
