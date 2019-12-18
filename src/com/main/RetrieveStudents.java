@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.hib.Student;
 
-public class MutlipleStudents {
+public class RetrieveStudents {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,17 +17,28 @@ public class MutlipleStudents {
 
 		try {
 			// Create 3 more students object
-			Student s1 = new Student("John", "Terry", "terry@gmail.com");
-			Student s2 = new Student("Eden", "Hazard", "eden@gmail.com");
-			Student s3 = new Student("Didier", "Drogba", "didier@gmail.com");
+			Student s1 = new Student("Hernan", "Crespo", "hernancrespo@chelseafc.com");
+
 			// Start a transaction
 			session.beginTransaction();
 			// Save the student object
 			System.out.println("Saving students.");
 			session.save(s1);
-			session.save(s2);
-			session.save(s3);
 			// Commit Transaction
+			session.getTransaction().commit();
+
+			// Find out the student's id which is a primary key
+			System.out.println("Saved student. Generated id: " + s1.getId());
+
+			// Getting a new session & start the transaction
+			session = factory.getCurrentSession();
+			session.beginTransaction();
+
+			// Retrieve student based in the id: primary key
+			Student myStudent = session.get(Student.class, s1.getId());
+			System.out.println("Get Complete: " + myStudent);
+
+			// commit the transaction
 			session.getTransaction().commit();
 			System.out.println("Done!");
 
