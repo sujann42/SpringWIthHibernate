@@ -1,0 +1,12 @@
+We can define our own CUSTOM Generation Strategy.
+1) Create implementation of org.hibernate.id.IdentifierGenerator
+2) Override the method: public Serializable generate(...){}
+
+
+/* Primary key is the one that is used for Auto-Increment */
+@GeneratedValue(strategy = GenerationType.IDENTITY) 
+
+If it is required to restart the ID or the primary key from the beginning we can 
+use this query:
+
+=>TRUNCATE DATABASE_NAME.TABLE_NAME

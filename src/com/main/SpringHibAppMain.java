@@ -34,7 +34,7 @@ public class SpringHibAppMain {
 
 		try {
 			// Create a student object
-			Student s1 = new Student("Sam", "Walker", "Samwalker@sam.com");
+			Student s1 = new Student("Harry", "Kane", "hk@gmail.com");
 			// Start a transaction
 			session.beginTransaction();
 			// Save the student object
