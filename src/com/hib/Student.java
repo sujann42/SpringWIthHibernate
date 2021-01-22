@@ -9,6 +9,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GeneratorType;
 
+/*This is an entity class*/
+
 @Entity
 @Table(name = "student")
 public class Student {
