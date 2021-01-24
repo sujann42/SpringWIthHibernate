@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GeneratorType;
 
 /*This is an entity class*/
-/*This is from master level*/
+/*This is from upstreamlevel*/
 
 @Entity
 @Table(name = "student")
